@@ -14,6 +14,9 @@ Built with **TypeScript** + **Zod**, backed by the free [football-data.org](http
 > Ask Claude *"How is Real Madrid doing this season?"* or *"Compare Arsenal and Liverpool's recent form"*
 > and it answers with real data through these tools.
 
+**🔗 Live playground:** [matchday-mcp-web.vercel.app](https://matchday-mcp-web.vercel.app) — an
+interactive dashboard built with SvelteKit + Svelte 5 that runs on this server's data layer.
+
 ## Demo
 
 ```text
@@ -101,8 +104,9 @@ npm run build      # bundle to dist/ with tsup
 - **Off-season aware.** In the off-season the API's "current season" already points at the
   next, not-yet-started season (empty tables), so the default season rolls over in August.
 - **Pure, testable handlers.** Tool logic lives in plain functions returning strings; the MCP
-  wiring is a thin layer on top. The same data layer is reused by the
-  [web playground](#) *(coming in the next release)*.
+  wiring is a thin layer on top. The same data layer powers the
+  [web playground](https://matchday-mcp-web.vercel.app)
+  ([source](https://github.com/reiorozco/matchday-mcp-web)).
 
 ## Data
 
