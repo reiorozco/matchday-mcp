@@ -1,0 +1,54 @@
+{
+  "name": "matchday-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for live football data (teams, fixtures, results, standings) powered by TheSportsDB. Built with TypeScript and Zod.",
+  "license": "MIT",
+  "author": "Reinaldo Orozco",
+  "type": "module",
+  "homepage": "https://github.com/reiorozco/matchday-mcp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reiorozco/matchday-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/reiorozco/matchday-mcp/issues"
+  },
+  "bin": {
+    "matchday-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "claude",
+    "football",
+    "soccer",
+    "thesportsdb",
+    "ai-tools",
+    "zod"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.20.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.2.0"
+  }
+}
