@@ -1,11 +1,40 @@
+# Dependabot — tier critico (proyecto activo).
+# Objetivo: estar al dia, incluidos majors, con poco ruido.
+#  - frecuencia mensual + PRs agrupados (produccion / desarrollo) en vez de goteo suelto.
+#  - se PROPONEN majors (aqui si interesa estar al dia); se revisan al mergear.
+#  - los updates de SEGURIDAD llegan igual al instante (canal aparte).
 version: 2
 updates:
-  - package-ecosystem: npm
+  - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: weekly
+      interval: "monthly"
     open-pull-requests-limit: 5
-  - package-ecosystem: github-actions
+    groups:
+      production:
+        dependency-type: "production"
+        update-types:
+          - "minor"
+          - "patch"
+          - "major"
+      development:
+        dependency-type: "development"
+        update-types:
+          - "minor"
+          - "patch"
+          - "major"
+    commit-message:
+      prefix: "chore(deps)"
+      prefix-development: "chore(deps-dev)"
+
+  - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: weekly
+      interval: "monthly"
+    open-pull-requests-limit: 3
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+    commit-message:
+      prefix: "chore(ci)"
